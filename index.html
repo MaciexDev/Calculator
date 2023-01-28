@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator by Maciex</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="kalkulator">
+
+        <br>
+
+        <input type="text" id="display">
+
+        <br>
+        <input type="button" id="niewidzialne">
+        <input type="button" id="przyciski" value="C" onclick="add('c')">
+        <input type="button" id="przyciski" value="<" onclick="backspace()">
+        <input type="button" id="przyciski" value="/" onclick="add('/')">
+
+        <br>
+
+        <input type="button" id="przyciski" value="7" onclick="add('7')">
+        <input type="button" id="przyciski" value="8" onclick="add('8')">
+        <input type="button" id="przyciski" value="9" onclick="add('9')">
+        <input type="button" id="przyciski" value="*" onclick="add('*')">
+
+        <br>
+
+
+        <input type="button" id="przyciski" value="4" onclick="add('4')">
+        <input type="button" id="przyciski" value="5" onclick="add('5')">
+        <input type="button" id="przyciski" value="6" onclick="add('6')">
+        <input type="button" id="przyciski" value="-" onclick="add('-')">
+
+        <br>
+
+
+        <input type="button" id="przyciski" value="1" onclick="add('1')">
+        <input type="button" id="przyciski" value="2" onclick="add('2')">
+        <input type="button" id="przyciski" value="3" onclick="add('3')">
+        <input type="button" id="przyciski" value="+" onclick="add('+')">
+
+        <br>
+
+
+        <input type="button" style="width: 95px;" id="przyciski" value="0" onclick="add('0')">
+        <input type="button" id="przyciski" value="." onclick="add('.')">
+        <input type="button" id="suma" value="=" onclick="suma()">
+
+        <script>
+            const input = document.getElementById("display")
+
+            function add(x) {
+                input.value += x
+
+                if (x == "c") {
+                    input.value = ''
+                }
+            }
+
+            function suma() {
+                x = input.value
+                x = eval(x)
+                input.value = x;
+            }
+
+            function backspace() {
+                var number = input.value;
+                var len = number.length - 1;
+                var newnumber = number.substring(0, len);
+                input.value = newnumber;
+            }
+        </script>
+
+
+    </div>
+
+</body>
+
+</html>
